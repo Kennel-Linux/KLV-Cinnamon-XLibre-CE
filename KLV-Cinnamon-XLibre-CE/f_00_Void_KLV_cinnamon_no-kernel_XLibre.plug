@@ -475,18 +475,18 @@ cp /root/.local/share/applications/octoxbps-notifier.desktop /etc/xdg/autostart/
 cp /usr/share/applications/polkit-gnome-authentication-agent-1.desktop /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
 
 # add sudo -spot to .desktop files run-as-spot
-cd /usr/share/applications
-sed -i 's/^Exec=/&sudo -uspot /' octoxbps.desktop
-sed -i 's/^Exec=/&sudo -uspot /' octoxbps-notifier.desktop
+# cd /usr/share/applications
+# sed -i 's/^Exec=/&sudo -uspot /' octoxbps.desktop
+# sed -i 's/^Exec=/&sudo -uspot /' octoxbps-notifier.desktop
 
 # Create nemo desktop launcher
-cat <<'EOF' >> /root/Startup/start_nemo_desktop
-#!/bin/sh
-sudo -u spot nemo-desktop
-EOF
+# cat <<'EOF' >> /root/Startup/start_nemo_desktop
+# #!/bin/sh
+# sudo -u spot nemo-desktop
+# EOF
 
 # make /root/Startup/start_nemo_desktop executable
-chmod +x /root/Startup/start_nemo_desktop
+# chmod +x /root/Startup/start_nemo_desktop
 
 # Startup
 #
