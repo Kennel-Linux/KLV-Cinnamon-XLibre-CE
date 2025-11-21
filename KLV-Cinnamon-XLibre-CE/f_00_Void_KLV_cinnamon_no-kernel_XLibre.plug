@@ -162,6 +162,10 @@ usermod -G bluetooth -a root
 xbps-install -y dbus
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/dbus
 
+# elogind
+xbps-install -y elogind
+ln -s /etc/sv/elogind /var/service/
+
 # Install Network Manager
 #
 xbps-install -y NetworkManager network-manager-applet
@@ -340,6 +344,7 @@ sed -i '51,$d' ~/.bashrc
 echo "pfetch" >> ~/.bashrc
 VAR='PS1="\[\e[0;36m\]┌──\[\e[0m\][ \[\e[0;33m\]\u\[\e[0m\]\[\e[0;32m\]@\[\e[0;36m\]\h\[\e[0m\] ] [ \[\e[0;36m\]\t\[\e[0m\] ]\n\[\e[0;36m\]├── \[\e[0;32m\]\w\[\e[0;36m\]\n\[\e[0;36m\]└>\[\e[0m\]" '
 echo "$VAR" >> ~/.bashrc
+
 # spot
 # Change to fancy prompt via .bashrc
 touch /home/spot/.bashrc
@@ -481,7 +486,7 @@ cp /usr/share/applications/polkit-gnome-authentication-agent-1.desktop /etc/xdg/
 
 # Create nemo desktop launcher
 # cat <<'EOF' >> /root/Startup/start_nemo_desktop
-# #!/bin/sh
+#!/bin/sh
 # sudo -u spot nemo-desktop
 # EOF
 
@@ -664,7 +669,7 @@ chmod +x -R /usr/local/bin
 echo "stage 2 is complete!!"
 
 # Set lxterminal as default console
-gsettings set org.cinnamon.desktop.default-applications.terminal exec 'lxterminal'
+# gsettings set org.cinnamon.desktop.default-applications.terminal exec 'lxterminal'
 
 ## stage 3 configurations
 echo "stage 3 is complete!!"
