@@ -456,9 +456,7 @@ chown -R weedog:weedog /home/weedog
 
 # add users to groups and change permissions
 #
-usermod -a -G audio weedog
 usermod -a -G audio spot
-usermod -a -G video weedog
 usermod -a -G video spot
 xhost +
 chmod 755 /
@@ -563,6 +561,7 @@ wget -c https://github.com/sofijacom/xbps_packages/raw/refs/heads/main/set-cinna
 wget -c https://github.com/sofijacom/xbps_packages/raw/refs/heads/main/Cinnamon-xbps-tools-1.2_1.noarch.xbps
 wget -c https://github.com/sofijacom/xbps_packages/raw/refs/heads/main/catppuccin-cursors-1.1.2_1.noarch.xbps
 wget -c https://github.com/sofijacom/xbps_packages/raw/refs/heads/main/pup-volume-monitor-1.15_0.x86_64.xbps
+wget -c https://github.com/sofijacom/xbps_packages/raw/refs/heads/main/Octoxbps-cleaner-cache-1.1.2_1.noarch.xbps
 
 
 #### Install KLV custom packages ####
@@ -661,6 +660,9 @@ xbps-install -y --repository=Build/ catppuccin-cursors-1.1.2_1
 
 # Install Volume-monitor
 xbps-install -y --repository=Build/ pup-volume-monitor-1.15_0
+
+# Octoxbps-cleaner-cache
+xbps-install -y --repository=Build/ Octoxbps-cleaner-cache-1.1.2_1
 
 
 # Set execution permissions recursivly for binaries and scripts
