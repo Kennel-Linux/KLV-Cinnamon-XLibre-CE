@@ -48,7 +48,7 @@ EOF
 
 xbps-install -Su
 
-echo xlibre xlibre-server xlibre-server-common \
+echo xlibre xlibre-server xlibre-server-devel xlibre-server-common \
 | xargs -n1 xbps-install -y
 echo xlibre-server-xephyr xlibre-server-xnest xlibre-server-xvfb \
 | xargs -n1 xbps-install -y
